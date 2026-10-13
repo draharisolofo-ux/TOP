@@ -1,0 +1,166 @@
+@font-face {
+  font-family: 'Norse Bold';
+  src: url("norse-font/norsebold.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.odin-bg {
+  background-image: url("./img/halie-west-25xggax4bSA-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  flex: 1;
+  flex-direction: column;
+  color: white;
+  position: relative;
+}
+
+.odin-bg div img {
+  width: 17%;
+  margin: 10px 0;
+}
+
+.odin-bg div p {
+  font-size: 70px;
+  font-family: 'Norse Bold', 'Times New Roman', Times, serif;
+  /* color: white; */
+  z-index: 1;
+}
+
+.odin-bg > div:not(.bg) {
+  position: relative;
+}
+
+.bg {
+  background-color: black;
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20vh;
+}
+
+#author {
+  /* color: white; */
+  position: absolute;
+  bottom: 5px;
+  font-size: 12px;
+  opacity: .7;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#author span {
+  text-decoration: underline;
+}
+
+.sign-up {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100vh;
+  width: 100%;
+  background-color: #f7f6f6;
+  --strong-green: rgb(53, 126, 53);
+}
+
+.description {
+  padding: 5%;
+  width: 70%;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.description > * {
+  margin-bottom: 10px;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px 40px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+  margin-bottom: 10px;
+}
+
+form > div {
+  display: flex;
+  width: 70%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.inputs {
+  flex: 1 0 calc(50% - 20px);
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  padding: 10px;
+  font-weight: 600;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+input {
+  width: 300px;
+  padding: 5px;
+  border: 0.5px solid rgb(211, 211, 211);
+  border-radius: 3px;
+}
+
+button {
+  max-width: 200px;
+  position: relative;
+  justify-content: center;
+  padding: 10px 20px;
+  background-color: var(--strong-green);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+  cursor: pointer;
+}
+
+.sign-up > button, .sign-up > p {
+  margin: 0 40px;
+}
+
+.sign-up p strong {
+  color: var(--strong-green);
+}
+
+input:user-invalid {
+  border-color: red;
+}
+
+button:active {
+  bottom: -2px;
+  box-shadow: none;
+}

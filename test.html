@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #parent {
+      width: 500px;
+      height: 500px;
+      margin: auto;
+      border: 1px solid;
+    }
+    div {
+      height: 20px;
+      width: 100vw;
+      margin-bottom: 5px;
+    }
+    .group1 {
+      background-color: aqua;
+    }
+
+    .group1 div:first-child {
+      color: red;
+      background-color: blanchedalmond;
+      font: 30px, "Seoge UI";
+    }
+
+    /* .group3 {
+      background-color: orange;
+    } */
+
+    .group1 ~ div {
+      background-color: hotpink;
+    }
+
+    li {
+      counter-increment: li;
+    }
+
+    li::marker {
+      content: "L" counter(li) "- ";
+    }
+
+    body {
+      counter-reset: li;
+      line-height: 1.4;
+      font-family: system-ui;
+      margin: 3rem;
+    }
+
+    div::selection {
+      background-color: #fff;
+    }
+
+    div::first-letter {
+      text-transform: capitalize;
+    }
+
+    .grand-child.group1::before, .grand-child.group1::after {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: powderblue;
+      border: none;
+      margin-right: 2px;
+      margin-left: 2px;
+    }
+  </style>
+</head>
+<body>
+  <main class="parent">
+    <div class="child group1">
+      <div class="grand-child group1">ok</div>
+    </div>
+    <div class="child group2">
+      <div class="grand-child group2"></div>
+    </div>
+    <div class="child group3">
+      <div class="grand-child group3"></div>
+    </div>
+
+    <ul>
+      <li>Home</li>
+      <li>Nope</li>
+      <li>Yep</li>
+    </ul>
+  </main>
+
+</body>
+</html>

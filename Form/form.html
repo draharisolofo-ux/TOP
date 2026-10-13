@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="form.css">
+  <script src="form.js" defer></script>
+  <title>Document</title>
+</head>
+<body>
+  <main>
+    <section class="odin-bg">
+      <div>
+        <div class="bg"></div>
+        <div class="content">
+          <img src="./img/odin-lined.png" alt="odin logo">
+          <p class="title">ODIN</p>
+        </div>
+      </div>
+      <p id="author">Photo by <span>Halie West</span> on <span>Unsplash</span></p>
+    </section>
+    <section class="sign-up">
+      <div class="description">
+        <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</p>
+        <p>You <em>know</em> you want to.</p>
+      </div>
+      <form id="myform">
+        <h2>Let's do this!</h2>
+        <div>
+          <div class="inputs">
+            <label for="firstname">FIRST NAME</label>
+            <input type="text" id="firstname" name="firstname" required>
+          </div>
+          <div class="inputs">
+            <label for="lastname">LAST NAME</label>
+            <input type="text" id="lastname" name="lastname" required>
+          </div>
+          <div class="inputs">
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="inputs">
+            <label for="phone">PHONE NUMBER</label>
+            <input type="text" id="phone" name="phone" required>
+          </div>
+          <div class="inputs">
+            <label for="password">PASSWORD</label>
+            <input type="password" name="password" minlength="6" required>
+          </div>
+          <div class="inputs">
+            <label for="">CONFIRM PASSWORD</label>
+            <input type="password" name="confirm_password" minlength="6" required>
+          </div>
+        </div>
+      </form>
+      <button form="myform">Create Account</button>
+      <p>Already have an account? <strong>Log in</strong></p>
+    </section>
+  </main>
+</body>
+</html>
