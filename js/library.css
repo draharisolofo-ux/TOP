@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  padding: 20px;
+}
+
+form {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px grey;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+input, select {
+  padding: 4px;
+  width: 100%;
+  margin-top: 4px;
+  border: none;
+  border-radius: 4px;
+  background-color: #e7e7e7; ;
+}
+
+input:user-invalid {
+  border: 1px solid red;
+}
+
+button {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  position: relative;
+  cursor: pointer;
+}
+
+.btn-add {
+  background-color: rgb(47, 137, 255);
+  left: 75%;
+  width: 50%;
+}
+
+.btn-remove {
+  background-color: red;
+}
+
+table, th, tbody, td, tr {
+  border: 1px solid;
+  border-collapse: collapse;
+  padding: 10px;
+}
