@@ -7,15 +7,7 @@ const p1 = document.querySelector("#player1");
 const p2 = document.querySelector("#player2");
 const message = document.querySelector(".player-display");
 
-for(let i = 0; i < 9; i++)
-{
-  const div = document.createElement("div");
-  div.id = i;
-  div.classList.add("tic-block");
-  div.dataset.index = i;
-  div.style.pointerEvents = "none"
-  container.append(div);
-}
+createBlocks();
 
 const blocks = document.querySelectorAll('.tic-block');
 
@@ -150,3 +142,16 @@ resetBtn.addEventListener('click', function() {
   pop.style.display = "inline-block";
   setTimeout(() => message.textContent = "", 1000);
 })
+
+function createBlocks()
+{
+  for(let i = 0; i < 9; i++)
+  {
+    const div = document.createElement("div");
+    div.id = i;
+    div.classList.add("tic-block");
+    div.dataset.index = i;
+    div.style.pointerEvents = "none"
+    container.append(div);
+  }
+}
