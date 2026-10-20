@@ -7,34 +7,36 @@ const tbody = document.querySelector("tbody");
 
 let myLibrary = [];
 
-function Book() {
-  // the constructor...
+class Book {
+  constructor(title, author, pages, read) 
+  {
+    this.id = crypto.randomUUID();
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  toggleRead()
+  {
+    this.read = !this.read;
+  }
 }
 
-Book.prototype.create = function(title, author, page, read = false) {
-  this.id = crypto.randomUUID();
-  this.title = title;
-  this.author = author;
-  this.pages = page;
-  this.read = read;
-  myLibrary.push({
-    id: this.id,
-    title: this.title,
-    author: this.author,
-    pages: this.pages,
-    read: this.read
-  });
-}
-
-Book.prototype.check = function(id) {
-  myLibrary = myLibrary.map(b => {
-    if(b.id === id) {
-      b.read = !b.read;
-    }
-    return b;
-  });
-
+const create = function(title, author, pages, read = false) {
+  const book = new Book(title, author, pages, read);
+  myLibrary.push(book);
   showBooks();
+}
+
+function check(id) {
+  const book = myLibrary.find(b => b.id === id);
+  book.toggleRead();
+  showBooks();
+}
+
+function removeBook(id) {
+  myLibrary = myLibrary.filter(b => b.id != id);
 }
 
 function showBooks()
@@ -43,10 +45,6 @@ function showBooks()
   for(let book of myLibrary) {
     addRow(book);
   }
-}
-
-function removeBook(id) {
-  myLibrary = myLibrary.filter(b => b.id != id);
 }
 
 function addRow(book) {
@@ -70,7 +68,7 @@ function addRow(book) {
     removeBook(tr.cells[0].textContent);
   });
   checkBtn.addEventListener('click', function() {
-    Book.prototype.check(tr.cells[0].textContent);
+    check(tr.cells[0].textContent);
   })
   actionRow.append(checkBtn, removeBtn);
   idRow.textContent = book.id;
@@ -84,8 +82,6 @@ function addRow(book) {
 
 btn.addEventListener('click', (e) => {
   e.preventDefault();
-  const book = new Book();
-  book.create(title.value, author.value, pages.valueAsNumber, read.value);
+  create(title.value, author.value, pages.valueAsNumber, read.value);
   title.value = author.value = pages.value = read.value = "";
-  addRow(book);
 })
